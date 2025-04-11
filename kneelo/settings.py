@@ -18,19 +18,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-STATIC_URL = 'static/'
-
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
-
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / "static" ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Whitenoise — ОК
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # обязательно ДО CommonMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     ...
 ]
 
