@@ -17,6 +17,26 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+STATIC_URL = 'static/'
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # обязательно ДО CommonMiddleware
+    ...
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
