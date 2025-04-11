@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эргономичные коленные стулья</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #f4f4f4;
+            --accent-color: #d4a73b;
+            --text-color: #333;
+            --dark-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--main-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Шапка сайта */
+        .header {
+            background: var(--dark-bg);
+            padding: 15px 0;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .logo-button {
+            background: transparent;
+            color: var(--accent-color);
+            padding: 2px 8px;
+            margin-left: 2px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Секция Hero */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('/media/12.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background: #c19632;
+            transform: translateY(-2px);
+        }
+
+        /* Преимущества */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Карточка товара */
+        .product {
+            display: flex;
+            gap: 60px;
+            padding: 60px 0;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-image {
+            flex: 1;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .product-info h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .product-price {
+            font-size: 28px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .product-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .product-features li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .buy-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #c19632;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 40px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            background: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+        }
+
+        /* Футер */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info > div {
+            text-align: left;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 16px;
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        /* Секция о пользе */
+        .benefits-detailed {
+            padding: 40px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .benefit-item img {
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        /* Галерея */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 400px; /* Увеличим высоту */
+            object-fit: contain; /* Изменим на contain чтобы избежать обрезки */
+            border-radius: 8px;
+            transition: transform 0.3s;
+            background: white; /* Добавим белый фон */
+            padding: 10px; /* Добавим отступы */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Обновленный FAQ */
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 40px auto;
+            max-width: 400px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-button:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .submit-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #c19632;
+        }
+
+        /* Секция надежности */
+        .reliability {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .reliability h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        .reliability h3 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 60px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Добавим стили для навигации после стилей .header */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Обновим стили для карточек сравнения */
+        .comparison-card {
+            flex: 1;
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .comparison-card img {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .comparison-card .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Добавим стили для иконок в карточках сравнения */
+        .comparison-card .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .comparison-card .icon-text img {
+            width: 24px;
+            height: 24px;
+            margin: 0;
+        }
+
+        /* Добавим стили для кнопок навигации после существующих стилей */
+        .scroll-buttons {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .scroll-button {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .scroll-button:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .scroll-button svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-text">knee</span>
+                    <span class="logo-button">lo</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="#benefits-detailed">О продукте</a>
+                    <a href="#comparison">Сравнение</a>
+                    <a href="#product">Заказать</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Улучшите осанку и здоровье попробуйте коленный стул!</h1>
+                <p>вместе с ведущими производителями</p>
+                <button class="cta-button">заказать прямо сейчас</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="reliability">
+        <div class="container">
+            <h2>НАДЕЖНОСТЬ</h2>
+            <h3>Почему нам можно доверять</h3>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/media/hq.svg" alt="Качество">
+                    </div>
+                    <h4>Качество проверено временем</h4>
+                    <p>Мы предлагаем только надежные и удобные коленные стулья, изготовленные из прочных материалов, прошедших тщательный контроль</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/media/delivery.svg" alt="Доставка">
+                    </div>
+                    <h4>Быстрая, надежная доставка</h4>
+                    <p>Мы обеспечиваем быструю и надежную доставку в любой город Казахстана. Ваш комфорт - наш приоритет!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/media/support.svg" alt="Поддержка">
+                    </div>
+                    <h4>Быстрая, надежная поддержка</h4>
+                    <p>Мы предоставляем гарантию на продукцию и всегда готовы помочь с любыми вопросами. Вы получаете не только товар, но и заботу о вашем комфорте!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="benefits-detailed" class="benefits-detailed">
+            <h2 style="text-align: center; margin-bottom: 40px;">Почему коленный стул - это здорово?</h2>
+            
+            <div class="benefit-item">
+                <img src="/media/8.jpg" alt="Сравнение осанки">
+                <div class="benefit-text">
+                    <h3>Правильная осанка без усилий</h3>
+                    <p>В отличие от обычного стула, коленный стул автоматически задает правильное положение позвоночника. Угол наклона сиденья в 20 градусов способствует естественному выравниванию позвоночника и снижает нагрузку на поясницу.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <img src="/media/9.jpg" alt="Активные мышцы">
+                <div class="benefit-text">
+                    <h3>Активация мышц кора</h3>
+                    <p>Сидя на коленном стуле, вы незаметно для себя укрепляете мышцы спины и пресса. Это помогает формировать мышечный корсет, который поддерживает позвоночник в правильном положении.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <img src="/media/10.jpg" alt="Кровообращение">
+                <div class="benefit-text">
+                    <h3>Улучшение кровообращения</h3>
+                    <p>Открытый угол между бедрами и торсом способствует лучшему кровообращению в нижних конечностях, что особенно важно при сидячей работе.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section" style="text-align: center; padding: 40px 0;">
+            <h2>Посмотрите, как работает коленный стул</h2>
+            <div style="margin: 30px 0;">
+                <video width="860" height="515" controls style="max-width: 100%; border-radius: 10px;">
+                    <source src="videopreview.jobtemplate.mp4.default.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+            </div>
+        </section>
+
+        <section id="comparison" class="comparison" style="padding: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Почувствуйте разницу</h2>
+            <div style="display: flex; gap: 30px; align-items: stretch;">
+                <div class="comparison-card">
+                    <div class="image-container">
+                        <img src="/media/11.jpg" alt="Обычный стул">
+                    </div>
+                    <h3 style="color: #ff6b6b; margin-bottom: 15px;">Обычный офисный стул</h3>
+                    <div class="icon-text">
+                        <img src="/media/back-stretch-standing.svg" alt="Плохая осанка">
+                        <span>Неправильное положение позвоночника</span>
+                    </div>
+                    <div class="icon-text">
+                        <img src="/media/back-pain.svg" alt="Боль">
+                        <span>Боль в пояснице</span>
+                    </div>
+                    <div class="icon-text">
+                        <img src="/media/sleepy-worker-at-work.svg" alt="Усталость">
+                        <span>Быстрая утомляемость</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <div class="image-container">
+                        <img src="/media/1.jpg" alt="Коленный стул">
+                    </div>
+                    <h3 style="color: var(--accent-color); margin-bottom: 15px;">Коленный стул KneeLoke</h3>
+                    <div class="icon-text">
+                        <img src="/media/human-back.svg" alt="Правильная осанка">
+                        <span>Естественное положение позвоночника</span>
+                    </div>
+                    <div class="icon-text">
+                        <img src="/media/healthy-life-meditation-peace.svg" alt="Комфорт">
+                        <span>Отсутствие нагрузки на спину</span>
+                    </div>
+                    <div class="icon-text">
+                        <img src="/media/health.svg" alt="Энергия">
+                        <span>Бодрость в течение всего дня</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <img src="/media/1.jpg" alt="Стул под разными углами">
+            <img src="/media/3.jpg" alt="Детали стула">
+            <img src="/media/4.jpg" alt="Использование стула">
+            <img src="/media/5.jpg" alt="Материалы">
+            <img src="/media/6.jpg" alt="Сборка стула">
+            <img src="/media/7.jpg" alt="Размеры стула">
+        </section>
+
+        <section id="product" class="product">
+            <div class="product-image">
+                <img src="/media/1.jpg" alt="Коленный стул" style="width: 100%; max-width: 500px; border-radius: 10px;">
+            </div>
+            <div class="product-info">
+                <h2>Эргономичный коленный стул</h2>
+                <div class="product-price">49 990 ₸</div>
+                <ul class="product-features">
+                    <li>Регулируемая высота сиденья и наклон опоры</li>
+                    <li>Мягкие подушки из memory foam</li>
+                    <li>Максимальная нагрузка: 120 кг</li>
+                    <li>Материал каркаса: массив бука</li>
+                    <li>Съемные чехлы для легкой чистки</li>
+                </ul>
+                <button class="buy-button">Заказать сейчас</button>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-item">
+                <div class="faq-question">Как долго служит коленный стул?</div>
+                <div class="faq-answer">При правильной эксплуатации срок службы составляет более 5 лет.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Подходит ли стул для длительной работы?</div>
+                <div class="faq-answer">Да, наши стулья разработаны для комфортной работы в течение всего дня.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Как ухаживать за стулом?</div>
+                <div class="faq-answer">Достаточно протирать влажной тканью и пылесосить обивку раз в неделю.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Нужно ли привыкать к коленному стулу?</div>
+                <div class="faq-answer">Да, период адаптации обычно занимает 1-2 недели. Рекомендуем начинать с 30-минутных интервалов, постепенно увеличивая время использования.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Можно ли регулировать высоту сиденья и наклон?</div>
+                <div class="faq-answer">Да, наша модель имеет удобные регулировки высоты сиденья и наклона опоры для колен, что позволяет настроить стул под ваш рост и комфорт.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Какой максимальный вес выдерживает стул?</div>
+                <div class="faq-answer">Наши стулья рассчитаны на нагрузку до 120 кг благодаря прочной конструкции и качественным материалам.</div>
+            </div>
+        </section>
+
+        <div style="text-align: center; padding: 20px 0 60px 0;">
+            <h3 style="margin-bottom: 20px; color: var(--text-color);">Остались вопросы?</h3>
+            <a href="https://wa.me/77777890017" class="whatsapp-button">
+                <img src="whatsapp-icon.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
+                Написать нам в WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="contact-info">
+                <div>
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (777) 777-77-77</p>
+                    <p>Email: info@almau.edu.kz</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/kneelo.kz" class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            @kneelo.kz
+                        </a>
+                        <a href="https://t.me/kneelo_kz" class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                            </svg>
+                            @kneelo_kz
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Адрес</h3>
+                    <p>г. Алматы, ул. Розыбакиева 276</p>
+                </div>
+                <div>
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="margin-bottom: 20px;">Оформление заказа</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <button type="submit" class="submit-button">Отправить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="scroll-buttons">
+        <button class="scroll-button" id="scrollTop" title="Наверх">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+            </svg>
+        </button>
+        <button class="scroll-button" id="scrollBottom" title="Вниз">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 20l-8-8h6V4h4v8h6z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isOpen = answer.style.display === 'block';
+                    
+                    // Закрываем все ответы
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.style.display = 'none';
+                    });
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+
+                    // Открываем текущий ответ, если он был закрыт
+                    if (!isOpen) {
+                        answer.style.display = 'block';
+                        question.classList.add('active');
+                    }
+                });
+            });
+
+            // Модальное окно
+            const modal = document.getElementById('orderModal');
+            const buyButton = document.querySelector('.buy-button');
+            const closeModal = document.querySelector('.close-modal');
+            const orderForm = document.getElementById('orderForm');
+
+            buyButton.addEventListener('click', () => {
+                console.log('Кнопка купить нажата');
+                modal.style.display = 'flex';
+            });
+
+            closeModal.addEventListener('click', () => {
+                console.log('Кнопка закрыть нажата');
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    console.log('Клик вне модального окна');
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Предотвращаем закрытие модального окна при клике внутри него
+            modal.querySelector('.modal-content').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            orderForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    address: document.getElementById('address').value
+                };
+
+                try {
+                    const response = await fetch('/api/create-order/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('Спасибо за заказ! Мы свяжемся с вами в ближайшее время.');
+                        modal.style.display = 'none';
+                        orderForm.reset();
+                    } else {
+                        alert(data.message || 'Произошла ошибка при отправке заказа. Пожалуйста, попробуйте позже.');
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте позже.');
+                }
+            });
+
+            // Добавим скрипт для плавной прокрутки после существующих скриптов
+            document.querySelectorAll('.nav-menu a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Добавим обработчик для кнопки в hero секции
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', () => {
+                console.log('Кнопка CTA нажата');
+                modal.style.display = 'flex';
+            });
+
+            const scrollTopBtn = document.getElementById('scrollTop');
+            const scrollBottomBtn = document.getElementById('scrollBottom');
+
+            // Показываем/скрываем кнопку "Наверх" при скролле
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.style.display = 'flex';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+
+            // Скролл наверх
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Скролл вниз
+            scrollBottomBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Изначально скрываем кнопку "Наверх"
+            scrollTopBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
