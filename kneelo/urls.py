@@ -4,12 +4,12 @@ from orders import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-# подключаем views напрямую
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),  # главная страница
-    path('api/create-order/', views.create_order),  # API при отправке формы
+    path('', views.homepage),
+    path('api/create-order/', views.create_order),
 ]
 
 

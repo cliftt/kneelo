@@ -35,7 +35,7 @@
             padding: 20px;
         }
 
-        /* Шапка сайта */
+
         .header {
             background: var(--dark-bg);
             padding: 15px 0;
@@ -80,7 +80,7 @@
             color: var(--accent-color);
         }
 
-        /* Секция Hero */
+
         .hero {
             background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('/media/12.jpg');
             background-size: cover;
@@ -137,7 +137,7 @@
             transform: translateY(-2px);
         }
 
-        /* Преимущества */
+
         .benefits {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -152,7 +152,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Карточка товара */
+
         .product {
             display: flex;
             gap: 60px;
@@ -230,7 +230,7 @@
             background: #c19632;
         }
 
-        /* FAQ */
+
         .faq {
             padding: 40px 0;
         }
@@ -252,7 +252,7 @@
             display: none;
         }
 
-        /* Футер */
+
         footer {
             background: #333;
             color: white;
@@ -294,7 +294,7 @@
             fill: currentColor;
         }
 
-        /* Секция о пользе */
+
         .benefits-detailed {
             padding: 40px 0;
         }
@@ -319,7 +319,7 @@
             flex: 1;
         }
 
-        /* Галерея */
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -329,19 +329,19 @@
 
         .gallery img {
             width: 100%;
-            height: 400px; /* Увеличим высоту */
-            object-fit: contain; /* Изменим на contain чтобы избежать обрезки */
+            height: 400px;
+            object-fit: contain;
             border-radius: 8px;
             transition: transform 0.3s;
-            background: white; /* Добавим белый фон */
-            padding: 10px; /* Добавим отступы */
+            background: white;
+            padding: 10px;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
         }
 
-        /* Обновленный FAQ */
+
         .faq-question {
             display: flex;
             justify-content: space-between;
@@ -452,7 +452,7 @@
             background: #c19632;
         }
 
-        /* Секция надежности */
+
         .reliability {
             padding: 80px 0;
             background: white;
@@ -500,7 +500,7 @@
             height: 40px;
         }
 
-        /* Добавим стили для навигации после стилей .header */
+
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -524,7 +524,7 @@
             color: var(--accent-color);
         }
 
-        /* Обновим стили для карточек сравнения */
+
         .comparison-card {
             flex: 1;
             text-align: center;
@@ -555,7 +555,7 @@
             margin-bottom: 20px;
         }
 
-        /* Добавим стили для иконок в карточках сравнения */
+
         .comparison-card .icon-text {
             display: flex;
             align-items: center;
@@ -570,7 +570,7 @@
             margin: 0;
         }
 
-        /* Добавим стили для кнопок навигации после существующих стилей */
+
         .scroll-buttons {
             position: fixed;
             right: 30px;
@@ -898,7 +898,7 @@
                     const answer = question.nextElementSibling;
                     const isOpen = answer.style.display === 'block';
                     
-                    // Закрываем все ответы
+
                     document.querySelectorAll('.faq-answer').forEach(a => {
                         a.style.display = 'none';
                     });
@@ -906,7 +906,7 @@
                         q.classList.remove('active');
                     });
 
-                    // Открываем текущий ответ, если он был закрыт
+
                     if (!isOpen) {
                         answer.style.display = 'block';
                         question.classList.add('active');
@@ -914,7 +914,7 @@
                 });
             });
 
-            // Модальное окно
+
             const modal = document.getElementById('orderModal');
             const buyButton = document.querySelector('.buy-button');
             const closeModal = document.querySelector('.close-modal');
@@ -937,7 +937,7 @@
                 }
             });
 
-            // Предотвращаем закрытие модального окна при клике внутри него
+
             modal.querySelector('.modal-content').addEventListener('click', (e) => {
                 e.stopPropagation();
             });
@@ -976,7 +976,7 @@
                 }
             });
 
-            // Добавим скрипт для плавной прокрутки после существующих скриптов
+
             document.querySelectorAll('.nav-menu a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -995,7 +995,7 @@
                 });
             });
 
-            // Добавим обработчик для кнопки в hero секции
+
             const ctaButton = document.querySelector('.cta-button');
             ctaButton.addEventListener('click', () => {
                 console.log('Кнопка CTA нажата');
@@ -1005,7 +1005,7 @@
             const scrollTopBtn = document.getElementById('scrollTop');
             const scrollBottomBtn = document.getElementById('scrollBottom');
 
-            // Показываем/скрываем кнопку "Наверх" при скролле
+
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
                     scrollTopBtn.style.display = 'flex';
@@ -1014,7 +1014,7 @@
                 }
             });
 
-            // Скролл наверх
+
             scrollTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
@@ -1022,7 +1022,7 @@
                 });
             });
 
-            // Скролл вниз
+
             scrollBottomBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: document.documentElement.scrollHeight,
@@ -1030,7 +1030,7 @@
                 });
             });
 
-            // Изначально скрываем кнопку "Наверх"
+
             scrollTopBtn.style.display = 'none';
         });
     </script>
