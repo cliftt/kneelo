@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эргономичные коленные стулья</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,6 +171,76 @@
             max-width: 100%;
             border-radius: 10px;
         }
+
+        @media (max-width: 768px) {
+            .header-content,
+            .nav-menu,
+            .features,
+            .benefits,
+            .contact-info,
+            .gallery,
+            .comparison .comparison-row {
+                flex-direction: column;
+                display: flex;
+                gap: 20px;
+            }
+        
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+        
+            .hero h1 {
+                font-size: 32px;
+            }
+        
+            .hero p {
+                font-size: 18px;
+            }
+        
+            .product {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 0;
+            }
+        
+            .product-info {
+                padding: 0;
+            }
+        
+            .gallery img {
+                height: auto;
+            }
+        
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .benefit-item img {
+                width: 100%;
+            }
+        
+            .feature-card {
+                padding: 20px;
+            }
+        
+            .contact-info {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        
+            .whatsapp-button {
+                width: 90%;
+            }
+        
+            .scroll-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+        
 
         .product-info {
             flex: 1;
@@ -768,12 +837,12 @@
             </div>
             <div class="product-info">
                 <h2>Эргономичный коленный стул</h2>
-                <div class="product-price">49 990 ₸</div>
+                <div class="product-price">40 000 ₸</div>
                 <ul class="product-features">
                     <li>Регулируемая высота сиденья и наклон опоры</li>
                     <li>Мягкие подушки из memory foam</li>
                     <li>Максимальная нагрузка: 120 кг</li>
-                    <li>Материал каркаса: массив бука</li>
+                    <li>Материал каркаса: фанера 12мм</li>
                     <li>Съемные чехлы для легкой чистки</li>
                 </ul>
                 <button class="buy-button">Заказать сейчас</button>
